@@ -1,8 +1,10 @@
 <div class="ex1">
+    <app-add></app-add>
 
     <h2>Affichage des posts</h2>
     <ul>
-        <!-- <li *ngFor="let posts of posts;">{{ this.posts.title }} : {{ this.posts.description }}</li> -->
-        <app-post [VarPost]="item" *ngFor="let posts of posts;" ></app-post>
+        <li *ngFor="let posts of posts;">{{ this.posts.title }} : {{ this.posts.description }}</li>
+        <!-- <app-post [Post]="Post" *ngFor="let posts of posts;" ></app-post> -->
     </ul>
+        
 </div>

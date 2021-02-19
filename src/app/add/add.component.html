@@ -1,1 +1,31 @@
-<p>add works!</p>
+
+<div class="add">
+    <div class="container">
+        <h2>Add</h2>
+
+        <form [formGroup]="profileForm">
+          
+            <label>
+              Titre:
+              <input type="text" formControlName="firstName">
+            </label>
+          
+            <label>
+              description:
+              <input type="text" formControlName="lastName">
+            </label>
+        
+            <p>
+                <button (click)="onSubmit()">submit</button>
+            </p>
+          
+          </form>
+
+          <div>
+              <p>Test :</p>
+              <p>{{name}}</p>
+          </div>
+    </div>
+   
+</div>
+

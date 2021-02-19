@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-add',
@@ -9,7 +10,17 @@ export class AddComponent implements OnInit {
 
   constructor() { }
 
+  profileForm = new FormGroup({
+    firstName: new FormControl(''),
+    lastName: new FormControl(''),
+  }); 
+
+  onSubmit() {
+    console.warn(this.profileForm.value);
+  }
+
   ngOnInit(): void {
   }
+
 
 }
