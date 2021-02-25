@@ -7,13 +7,16 @@ import { PostComponent } from './post/post.component';
 import { ListComponent } from './list/list.component';
 import { AddComponent } from './add/add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { HttprequestComponent } from './httprequest/httprequest.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostComponent,
     ListComponent,
-    AddComponent
+    AddComponent,
+    HttprequestComponent
   ],
   imports: [
     BrowserModule,
@@ -21,7 +24,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     ReactiveFormsModule,
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,10 +1,11 @@
 <div class="ex1">
-    <app-add (createPost)="addItem($event)"></app-add>
+    <app-add (onSubmit)="getItem($event)"></app-add>
 
     <h2>Affichage des posts</h2>
     <ul>
-        <li *ngFor="let posts of posts;">{{ this.posts.title }} : {{ this.posts.description }}</li>
+        <li *ngFor="let posts of posts;">{{ this.posts.title }} : {{ this.posts.link }}</li>
         <!-- <app-post [Post]="Post" *ngFor="let posts of posts;" ></app-post> -->
     </ul>
         
+    <br>
 </div>

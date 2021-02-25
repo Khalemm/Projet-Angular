@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
-import { Output, EventEmitter } from '@angular/core';
-import { Post } from '../@shared/models/post';
+
 import { IdGeneratorUtils } from '../@shared/utils/id-generator.utils';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Post } from '../@shared/models/post';
 
 @Component({
   selector: 'app-add',
@@ -11,31 +11,30 @@ import { IdGeneratorUtils } from '../@shared/utils/id-generator.utils';
 })
 export class AddComponent implements OnInit {
 
-  constructor() { }
-
-  @Output() createPost = new EventEmitter<Post>();
+  @Input("postEditing") set postEditing(post: Post) {
+    //TODO: on met à jour les valeurs du formulaire
+  };
+  @Output() onSubmit: EventEmitter<Post>;
 
   profileForm = new FormGroup({
-    title: new FormControl(''),
-    link: new FormControl(''),
-    description: new FormControl(''),
-  }); 
+    title :new FormControl(''),
+    link : new FormControl('')
+  });
 
-  onSubmit() {
-    // TODO: Use EventEmitter with form value
-    console.warn(this.profileForm.value);
+  constructor() {
+    this.onSubmit = new EventEmitter();
+    this.profileForm;
+  }
+
+  ngOnInit() {
+  }
+
+  createPost() {
     const post:Post = {
       id: IdGeneratorUtils.uuidv4(),
       title : this.profileForm.get("title").value,
-      link : this.profileForm.get("link").value,
-      description: this.profileForm.get("description").value
-      }
-      this.createPost.emit(this.profileForm.value); // transferer les data de la classe fille à la classe parent
-      this.profileForm.reset();
+      link : this.profileForm.get("link").value
+    }
+    this.onSubmit.emit(this.profileForm.value);
   }
-
-  ngOnInit(): void {
-  }
-
-
 }
