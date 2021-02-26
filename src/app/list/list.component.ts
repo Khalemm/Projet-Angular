@@ -30,7 +30,6 @@ export class ListComponent implements OnInit {
 
   addItem(item: Post){
       this.PostService.addPost(item).subscribe(post => {this.posts.push(post)})
-      this.posts.push(item);
     }
 
 }

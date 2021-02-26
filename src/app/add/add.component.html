@@ -1,9 +1,9 @@
-<!-- 
+
 <div class="add">
     <div class="container">
         <h2>Add</h2>
 
-        <form [formGroup]="profileForm">
+        <!-- <form [formGroup]="profileForm">
           
             <label>
               Titre:
@@ -24,17 +24,21 @@
                 <button (click)="onSubmit()">submit</button>
             </p>
           
+          </form> -->
+
+          <form [formGroup]="profileForm" (ngSubmit)="createPost()">
+
+            <input class="input" type="text" placeholder="Titre" formControlName="title">
+          
+            <input class="input" type="url" placeholder="Url vers la ressource" formControlName="link">
+          
+            <button type="submit" class="button">Ajouter</button>
           </form>
+
+
     </div>
    
-</div> -->
+</div>
 
-<form [formGroup]="profileForm" (ngSubmit)="createPost()">
 
-  <input class="input" type="text" placeholder="Titre" formControlName="title">
-
-  <input class="input" type="url" placeholder="Url vers la ressource" formControlName="link">
-
-  <button type="submit" class="button">Ajouter</button>
-</form>
 
