@@ -19,8 +19,8 @@ export class ListComponent implements OnInit {
 
   constructor(private PostService : PostService) { }
 
-  getItem(newItem: Post) {
-    this.PostService.addPost(newItem).subscribe();
+  getItem(item: Post) {
+    this.PostService.addPost(item).subscribe();
   }
 
   ngOnInit(): void {
@@ -31,5 +31,9 @@ export class ListComponent implements OnInit {
   addItem(item: Post){
       this.PostService.addPost(item).subscribe(post => {this.posts.push(post)})
     }
+  deleteItem(post){
+    this.posts = this.posts.filter(item => item._id !== post)     
+    this.PostService.delete(post).subscribe()
+  }
 
 }

@@ -1,5 +1,6 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component,EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { Post } from '../@shared/models/post';
+import { PostService } from '../@shared/service/post.service';
 
 @Component({
   selector: 'app-post',
@@ -9,9 +10,15 @@ import { Post } from '../@shared/models/post';
 export class PostComponent implements OnInit, OnDestroy {
 
   collapsed: boolean;
-  @Input() data : Post;
+  @Input() post : Post;
 
-  constructor() { }
+  @Output() deletePost = new EventEmitter<string>();
+
+  constructor(private PostService : PostService) { }
+
+  deleteItem(post : Post) {
+    this.deletePost.emit(post._id);
+  }
 
   ngOnInit(): void {
 

@@ -10,8 +10,8 @@
             <h2>Affichage des posts</h2>
             <ul>
                 <div class="posts">
-                    <li *ngFor="let posts of posts;"><div class="contenu">{{ this.posts.title }} : {{ this.posts.link }}</div></li>
-                    <!-- <app-post [Post]="Post" *ngFor="let posts of posts;" ></app-post> -->
+                    <!-- <li *ngFor="let posts of posts;"><div class="contenu">{{ this.posts.title }} : {{ this.posts.link }}</div></li> -->
+                    <app-post [post]="post" *ngFor="let post of posts;" (deletePost)="deleteItem($event)"></app-post>
                 </div>
                 
             </ul>

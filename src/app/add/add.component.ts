@@ -31,7 +31,6 @@ export class AddComponent implements OnInit {
 
   createPost() {
     const post:Post = {
-      id: IdGeneratorUtils.uuidv4(),
       title : this.profileForm.get("title").value,
       link : this.profileForm.get("link").value
     }
