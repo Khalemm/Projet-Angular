@@ -2,16 +2,42 @@
     font-family: Arial, Helvetica, sans-serif;
     margin-left: 5%;
     margin-right: 5%;
-
 }
 
 h2 {
-    margin-top: 20px;
     font-size: 30px;
 }
-
-li {
-    margin-top: 10px;
+.contenu{ 
+    
+    padding: 20px 20px 20px 20px;
+    margin-bottom: 20px;
+    margin-left: 20%;
+    margin-right: 20%;
     border-style: solid;
     border-width: 2px;
+}
+
+.posts {
+    margin-top: 10px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "m m n n"
+      "m m n n"
+      "m m n n";
+}
+
+.m { 
+    grid-area: m;
+    margin-top: 30%;
+}
+
+.n { 
+    grid-area: n; 
+    margin-top: 10%;
 }

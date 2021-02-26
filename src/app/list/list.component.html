@@ -1,11 +1,21 @@
 <div class="ex1">
-    <app-add (onSubmit)="addItem($event)"></app-add>
+    <div class="grid-container">
 
-    <h2>Affichage des posts</h2>
-    <ul>
-        <li *ngFor="let posts of posts;">{{ this.posts.title }} : {{ this.posts.link }}</li>
-        <!-- <app-post [Post]="Post" *ngFor="let posts of posts;" ></app-post> -->
-    </ul>
-        
+        <div class="m">
+            <app-add (onSubmit)="addItem($event)">
+            </app-add>
+        </div>
+
+        <div class="n">
+            <h2>Affichage des posts</h2>
+            <ul>
+                <div class="posts">
+                    <li *ngFor="let posts of posts;"><div class="contenu">{{ this.posts.title }} : {{ this.posts.link }}</div></li>
+                    <!-- <app-post [Post]="Post" *ngFor="let posts of posts;" ></app-post> -->
+                </div>
+                
+            </ul>
+        </div>
+      </div>
     <br>
 </div>
